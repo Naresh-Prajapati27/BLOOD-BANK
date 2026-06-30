@@ -16,9 +16,9 @@ How to run the Blood Bank & Donor Management System Using PHP and MySQL
 
 **************************Admin Credential***********************
 Username: admin
-Password: Test@123
+Password: admin@123
 
 **************************Donor Credential**********************
-Username: amitk@gmail.com
-Password: Test@123
+Username: reet@gmail.com
+Password: reet@12
 Or Register a new user.
