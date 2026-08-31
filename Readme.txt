@@ -88,6 +88,3 @@ DEVELOPER:
 Project Developed By: Naresh Prajapati
 Technology Used: PHP, MySQL, HTML, CSS, JavaScript
 
-Hosting Link:
-
-https://nareshindus.gt.tc/
