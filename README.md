@@ -137,7 +137,7 @@ BLOOD-BANK/
 ├── .github/
 │   └── workflows/
 │
-└── Readme.txt
+└── README.md
 ```
 
 ---
