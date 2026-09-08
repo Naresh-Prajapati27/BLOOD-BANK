@@ -1,25 +1,26 @@
 # 🩸 BBDMS — Blood Bank Donor Management System
 
-A complete web-based **Blood Bank Donor Management System (BBDMS)** developed using **PHP and MySQL**. The system helps manage blood donors, donor information, blood requests, blood groups, and administrative operations through an easy-to-use web interface.
+A web-based **Blood Bank Donor Management System (BBDMS)** developed using **PHP and MySQL**. The system provides functionality for donor registration, donor search, blood requests, user account management, and administrative operations.
+
+This project is built for **academic learning, portfolio development, and demonstrating PHP/MySQL web development skills**.
 
 ---
 
 ## 📌 Project Overview
 
-**BBDMS (Blood Bank Donor Management System)** is designed to simplify the management of blood donor records and blood bank operations.
+BBDMS is designed to simplify the management of blood donor information and blood-related requests through a web-based interface.
 
 The system provides separate functionality for:
 
 * 👤 Donor registration and management
 * 🩸 Blood group-based donor search
-* 📋 Donor information management
-* 📩 Blood request management
-* 🔐 Secure admin authentication
+* 📋 Donor profile management
+* 📩 Blood request submission and management
+* 🔐 User and admin authentication
 * 👨‍💼 Admin dashboard
 * 🔄 Profile and password management
-* 📞 Contact and blood request functionality
-
-The project is suitable for **academic projects, learning purposes, portfolio development, and demonstrating PHP/MySQL web development skills**.
+* 📞 Contact functionality
+* 🛡️ Session-based access protection
 
 ---
 
@@ -28,11 +29,13 @@ The project is suitable for **academic projects, learning purposes, portfolio de
 ### 👤 Donor Management
 
 * Donor registration
+* User login and logout
 * Donor profile management
-* View registered donors
+* Profile update
+* View donor list
 * Search donors by blood group
-* Display donor details
-* Manage donor records through the admin panel
+* Display donor information
+* Admin donor management
 
 ### 🩸 Blood Search
 
@@ -42,55 +45,56 @@ The project is suitable for **academic projects, learning purposes, portfolio de
 
 ### 📩 Blood Request System
 
-* Submit blood-related requests
-* Manage received requests
-* View request information through the system
+* Submit blood requests
+* View submitted requests
+* Request management through the admin panel
+* Display request information
 
-### 🔐 Authentication & Security
+### 🔐 Authentication & Account Management
 
-* Admin login system
+* User login
+* Admin login
 * Session-based authentication
-* Password change functionality
-* Admin logout
-* Protected administrative pages
+* User password change
+* Admin password change
+* Logout functionality
+* Protected user pages
+* Protected admin pages
 
-> **Security Note:** Default or personal passwords are intentionally not included in this repository.
+> **Security Note:** Personal passwords and login credentials are not included in this repository.
 
 ### 📊 Admin Dashboard
 
-The admin dashboard provides an overview of the blood bank system, including donor-related information and administrative controls.
+The admin dashboard provides access to important administrative functionality, including:
 
-### 👨‍💼 Admin Panel
-
-The admin panel allows authorized administrators to:
-
-* Manage donors
-* View donor records
-* Manage blood requests
-* View system information
-* Update account password
-* Manage administrative operations
+* Donor management
+* Donor list
+* Blood request management
+* Request details
+* Admin profile
+* Password management
+* Logout
 
 ### 📱 Responsive Interface
 
-The project uses **Bootstrap, CSS, JavaScript, and responsive design techniques** to provide a user-friendly interface across different screen sizes.
+The project uses **HTML, CSS, Bootstrap, JavaScript, jQuery, and Font Awesome** to provide a user-friendly web interface.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology       | Purpose                   |
-| ---------------- | ------------------------- |
-| **PHP**          | Backend development       |
-| **MySQL**        | Database management       |
-| **HTML5**        | Web page structure        |
-| **CSS3**         | Styling and layout        |
-| **JavaScript**   | Client-side functionality |
-| **Bootstrap**    | Responsive UI             |
-| **jQuery**       | Front-end interactions    |
-| **Font Awesome** | Icons                     |
-| **XAMPP**        | Local development server  |
-| **Git & GitHub** | Version control           |
+| Technology       | Purpose                       |
+| ---------------- | ----------------------------- |
+| **PHP**          | Backend development           |
+| **MySQL**        | Database management           |
+| **HTML5**        | Web page structure            |
+| **CSS3**         | Styling and layout            |
+| **JavaScript**   | Client-side functionality     |
+| **Bootstrap**    | Responsive UI                 |
+| **jQuery**       | Front-end interactions        |
+| **Font Awesome** | Icons                         |
+| **XAMPP**        | Local development environment |
+| **Git & GitHub** | Version control               |
 
 ---
 
@@ -98,6 +102,9 @@ The project uses **Bootstrap, CSS, JavaScript, and responsive design techniques*
 
 ```text
 BLOOD-BANK/
+│
+├── .github/
+│   └── workflows/
 │
 ├── SQL File/
 │   └── bbdms.sql
@@ -134,9 +141,6 @@ BLOOD-BANK/
 │   ├── request-received.php
 │   └── change-password.php
 │
-├── .github/
-│   └── workflows/
-│
 └── README.md
 ```
 
@@ -146,12 +150,13 @@ BLOOD-BANK/
 
 Before running the project locally, make sure you have:
 
-* **Windows / Linux / macOS**
-* **XAMPP**
-* **Apache**
-* **MySQL**
+* Windows, Linux, or macOS
+* XAMPP
+* Apache
+* MySQL
+* PHP
 * A modern web browser
-* Git (optional, for cloning/updating the project)
+* Git (optional)
 
 ---
 
@@ -159,20 +164,20 @@ Before running the project locally, make sure you have:
 
 ### 1. Install XAMPP
 
-Install XAMPP and make sure **Apache** and **MySQL** are available.
-
-Start:
+Install XAMPP and make sure the following services are available:
 
 ```text
 Apache
 MySQL
 ```
 
+Start both services from the XAMPP Control Panel.
+
 ---
 
 ### 2. Clone the Repository
 
-Open PowerShell or Command Prompt:
+Open Command Prompt or PowerShell:
 
 ```bash
 cd C:\xampp\htdocs
@@ -184,7 +189,7 @@ Clone the repository:
 git clone https://github.com/Naresh-Prajapati27/BLOOD-BANK.git
 ```
 
-The project will be downloaded into:
+The repository will be downloaded as:
 
 ```text
 C:\xampp\htdocs\BLOOD-BANK
@@ -192,27 +197,31 @@ C:\xampp\htdocs\BLOOD-BANK
 
 ---
 
-### 3. Locate the Project
+### 3. Locate the Application
 
-The main application is inside:
+The main application is located inside:
 
 ```text
 BLOOD-BANK\bbdms
 ```
 
-Therefore, the application folder should be available under the XAMPP `htdocs` directory.
+Therefore, the project structure under XAMPP should look like:
+
+```text
+C:\xampp\htdocs\BLOOD-BANK\bbdms
+```
 
 ---
 
 ### 4. Create the Database
 
-Open:
+Open phpMyAdmin:
 
 ```text
 http://localhost/phpmyadmin
 ```
 
-Create a new database named:
+Create a database named:
 
 ```text
 bbdms
@@ -225,7 +234,7 @@ bbdms
 Inside the repository, open:
 
 ```text
-SQL File/
+SQL File\
 ```
 
 Import:
@@ -234,17 +243,17 @@ Import:
 bbdms.sql
 ```
 
-into the newly created `bbdms` database.
+into the `bbdms` database.
 
-This will create the required tables and database structure.
+This will create the database tables and required structure.
 
 ---
 
 ### 6. Configure Database Connection
 
-The application uses a PHP configuration file for the database connection.
+Configure the application's database connection according to your local MySQL setup.
 
-For a standard XAMPP installation, the local configuration uses:
+For a standard XAMPP installation, the typical configuration is:
 
 ```text
 Host: localhost
@@ -253,9 +262,7 @@ Password: empty
 Database: bbdms
 ```
 
-Make sure your local configuration matches your MySQL setup.
-
-> **Important:** Do not upload personal database credentials, production passwords, API keys, or other secrets to GitHub.
+> **Important:** If your MySQL installation uses a different username or password, update the local configuration accordingly.
 
 ---
 
@@ -273,7 +280,7 @@ http://localhost/BLOOD-BANK/bbdms/
 http://localhost/BLOOD-BANK/bbdms/admin/
 ```
 
-> The exact URL can differ if you rename or move the project folder inside `htdocs`.
+> The URL may be different if you rename or move the repository folder inside `htdocs`.
 
 ---
 
@@ -281,143 +288,197 @@ http://localhost/BLOOD-BANK/bbdms/admin/
 
 The project uses **MySQL** as its relational database.
 
-Main database:
+Database name:
 
 ```text
 bbdms
 ```
 
-The SQL database structure is provided in:
+SQL file:
 
 ```text
 SQL File/bbdms.sql
 ```
 
-The database contains the tables required for managing administrators, donors, blood-related requests, and other application data.
+The database stores information required for donor management, user accounts, blood requests, administrative operations, and related application functionality.
 
 ---
 
 ## 🔐 Authentication
 
-The system includes authentication for administrative functionality.
+The system provides authentication for both users and administrators.
+
+### User
+
+Users can:
+
+* Register
+* Log in
+* Access their account
+* View and update profile information
+* Change their password
+* Submit blood requests
+* View received requests
+* Log out
+
+### Admin
 
 Administrators can:
 
 * Log in
-* Access the dashboard
-* Manage donor information
-* View requests
-* Update their password
-* Log out securely
+* Access the admin dashboard
+* Manage donors
+* View donor information
+* Manage blood requests
+* View request details
+* Manage their profile
+* Change their password
+* Log out
 
-For security reasons, login credentials are **not published in this repository**.
-
-If you are setting up the project locally, create/configure an administrator account through your local database according to your project configuration.
+Login credentials are intentionally **not published in this repository**.
 
 ---
 
-## 📸 Main Modules
+## 📋 Main Modules
 
-### Public/User Side
+### Public / User Side
 
-* Home
-* About
-* Donor List
-* Search Donor
-* Donor Registration
-* Blood Request
-* Contact
-* Login
-* Profile
-* Change Password
+* 🏠 Home
+* ℹ️ About
+* 🩸 Donor List
+* 🔎 Search Donor
+* 📝 Donor Registration
+* 📩 Blood Request
+* 📞 Contact
+* 🔐 Login
+* 👤 Profile
+* 🔑 Change Password
+* 📋 Request Received
+* 🚪 Logout
 
 ### Admin Side
 
-* Admin Login
-* Dashboard
-* Donor Management
-* Donor List
-* Request Management
-* Profile Management
-* Password Management
-* Logout
+* 🔐 Admin Login
+* 📊 Dashboard
+* 👥 Donor Management
+* 🩸 Donor List
+* 📩 Blood Request Management
+* 📋 Request Details
+* 👤 Admin Profile
+* 🔑 Password Management
+* 🚪 Logout
+
+---
+
+## 🧪 Local Testing
+
+The application was tested locally using **XAMPP, Apache, MySQL, and a web browser**.
+
+The following major functionality was tested:
+
+### User Side
+
+* ✅ Home page
+* ✅ About page
+* ✅ Donor List
+* ✅ Donor Search
+* ✅ Donor Registration
+* ✅ User Login
+* ✅ User Dashboard
+* ✅ Blood Request
+* ✅ Blood Request Submission
+* ✅ Request Received
+* ✅ User Profile
+* ✅ Profile Update
+* ✅ User Password Change
+* ✅ Logout
+* ✅ Login with Updated Password
+* ✅ User Session Protection
+* ✅ Contact Form
+
+### Admin Side
+
+* ✅ Admin Login
+* ✅ Admin Dashboard
+* ✅ Admin Donor List
+* ✅ Donor Details
+* ✅ Admin Blood Request Management
+* ✅ Request Details
+* ✅ Admin Profile
+* ✅ Admin Password Change
+* ✅ Login with Updated Admin Password
+* ✅ Admin Logout
+* ✅ Admin Session Protection
 
 ---
 
 ## 🎯 Use Cases
 
-This system can be used by:
+This project can be used for:
 
-* 🏥 Blood banks
-* 🏫 Educational institutions
-* 🩸 Donation organizations
-* 👨‍💻 Students learning PHP/MySQL
-* 📚 Academic project demonstrations
-* 💼 Developers building healthcare-related web applications
+* 🏥 Blood bank management demonstrations
+* 🏫 Academic projects
+* 👨‍💻 PHP/MySQL learning
+* 📚 Database management practice
+* 💼 Portfolio development
+* 🩸 Blood donor management concepts
+* 🌐 Web application development practice
 
 ---
 
 ## 🔮 Future Improvements
 
-The project can be further enhanced with modern features such as:
+Possible future enhancements include:
 
-* 📱 Fully modern responsive UI
-* 🔎 Advanced donor filtering
 * 📍 Location-based donor search
+* 🔎 Advanced donor filtering
 * 🔔 Email/SMS notifications
 * 📊 Advanced analytics dashboard
-* 📈 Blood inventory management
+* 🩸 Blood inventory management
 * 🗺️ Nearby donor discovery
-* 🔐 Password hashing using modern algorithms
-* 🛡️ Improved input validation and security
-* 🧑‍💼 Multiple admin roles and permissions
-* 📄 Export donor/request reports
+* 👥 Multiple admin roles and permissions
+* 📄 Donor/request report export
+* 🔐 Improved password security
+* 🛡️ Additional input validation
 * ☁️ Cloud deployment
 * 🔗 REST API integration
-* 🤖 AI-powered donor matching and recommendations
+* 📱 Further UI improvements
 
 ---
 
-## 🧪 Local Development
+## 🔒 Security Notes
 
-For development, the project can be run using:
+Before deploying the project to a production environment:
 
-```text
-XAMPP
-Apache
-MySQL
-PHP
-```
+* Never commit passwords to GitHub.
+* Never commit API keys or secret tokens.
+* Use strong password hashing for production authentication.
+* Validate and sanitize user input.
+* Use prepared SQL statements.
+* Keep production database credentials outside the public repository.
+* Enable HTTPS on production servers.
+* Review authentication and authorization before deployment.
+* Review any file upload functionality before public deployment.
 
-Recommended workflow:
+---
+
+## 🧑‍💻 Local Development Workflow
+
+A simple development workflow for the project:
 
 ```text
 Edit Code
-   ↓
-Run on localhost
-   ↓
+    ↓
+Run on Localhost
+    ↓
 Test Functionality
-   ↓
+    ↓
+Review Changes
+    ↓
 Commit Changes
-   ↓
+    ↓
 Push to GitHub
 ```
-
----
-
-## 📌 Important Security Notes
-
-Before deploying this application publicly:
-
-* Change all default credentials.
-* Never commit passwords to GitHub.
-* Never commit API keys or secret tokens.
-* Use strong password hashing such as `password_hash()` in new implementations.
-* Validate and sanitize user input.
-* Use prepared statements for database queries.
-* Configure production database credentials outside the public repository.
-* Enable HTTPS on production servers.
-* Review file upload functionality before public deployment.
 
 ---
 
@@ -428,7 +489,7 @@ Contributions and improvements are welcome.
 ### Contribution Workflow
 
 1. Fork the repository.
-2. Create a new branch.
+2. Create a new branch:
 
 ```bash
 git checkout -b feature/your-feature
@@ -436,20 +497,25 @@ git checkout -b feature/your-feature
 
 3. Make your changes.
 4. Test the application locally.
-5. Commit your changes.
+5. Stage the changes:
 
 ```bash
 git add .
+```
+
+6. Commit the changes:
+
+```bash
 git commit -m "Add your feature"
 ```
 
-6. Push your branch.
+7. Push the branch:
 
 ```bash
 git push origin feature/your-feature
 ```
 
-7. Open a Pull Request.
+8. Open a Pull Request.
 
 ---
 
@@ -457,7 +523,7 @@ git push origin feature/your-feature
 
 This project is intended primarily for **educational and portfolio purposes**.
 
-If you reuse or modify this project, please review the original project files and dependencies for their respective licensing terms.
+If you reuse or modify this project, review the original project files and third-party dependencies for their respective licensing terms.
 
 ---
 
@@ -466,9 +532,11 @@ If you reuse or modify this project, please review the original project files an
 **Naresh Prajapati**
 
 GitHub:
+
 https://github.com/Naresh-Prajapati27
 
 Project Repository:
+
 https://github.com/Naresh-Prajapati27/BLOOD-BANK
 
 ---
