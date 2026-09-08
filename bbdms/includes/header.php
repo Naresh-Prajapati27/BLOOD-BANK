@@ -106,21 +106,60 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </li>
                         
                         <?php if (isset($_SESSION['bbdmsdid']) && strlen($_SESSION['bbdmsdid']) != 0) { ?>
-                        <li class="nav-item dropdown <?php echo in_array($current_page, ['profile.php', 'change-password.php', 'request-received.php']) ? 'active' : ''; ?>">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                My Account
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile.php">Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="change-password.php">Change Password</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="request-received.php">Request Received</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logout.php">Logout</a>
-                            </div>
-                        </li>
+                      <li class="nav-item my-account-menu">
+    <a class="nav-link" href="javascript:void(0);" id="myAccountDropdown">
+        My Account
+    </a>
+
+    <div id="myAccountMenu" class="my-account-dropdown">
+        <a href="profile.php">Profile</a>
+        <a href="change-password.php">Change Password</a>
+        <a href="request-received.php">Request Received</a>
+        <a href="logout.php">Logout</a>
+    </div>
+</li>
+<style>
+.my-account-menu {
+    position: relative;
+}
+
+.my-account-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 99999;
+}
+
+.my-account-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333 !important;
+    background: #fff;
+    text-decoration: none;
+}
+
+.my-account-dropdown a:hover {
+    background: #f2f2f2;
+}
+</style>
+<script>
+document.getElementById("myAccountDropdown").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    var menu = document.getElementById("myAccountMenu");
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+});
+</script>
                         <?php } ?>
                         
                         <?php if (!isset($_SESSION['bbdmsdid']) || strlen($_SESSION['bbdmsdid']) == 0) { ?>
